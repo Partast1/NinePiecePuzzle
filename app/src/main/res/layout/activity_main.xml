@@ -45,13 +45,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HeaderTV">
 
-            <GridView
+            <ListView
+                android:id="@+id/puzzle_ListView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:columnWidth="33pt"
-                android:numColumns="3"
-                tools:layout_editor_absoluteX="159dp"
-                tools:layout_editor_absoluteY="204dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

@@ -9,9 +9,13 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements PuzzlePresenter.View {
 
     TextView text1, text2;
+    ArrayList<PuzzlePiece> pieces = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +32,11 @@ public class MainActivity extends AppCompatActivity implements PuzzlePresenter.V
         text1.setOnDragListener(dragListener);
         text2.setOnDragListener(dragListener);
 
+
+        PuzzleAdapter rateAdapter = new PuzzleAdapter(this, pieces);
+
     }
+
     //Comment
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override
@@ -44,28 +52,24 @@ public class MainActivity extends AppCompatActivity implements PuzzlePresenter.V
         @Override
         public boolean onDrag(View v, DragEvent event) {
             int dragEvent = event.getAction();
+            final View enterv = (View) event.getLocalState();
 
             switch (dragEvent) {
                 case DragEvent.ACTION_DRAG_ENTERED:
-                    final View fv = (View) event.getLocalState();
 
-                    if (fv.getId() == R.id.txt_Text1) {
+                    if (enterv.getId() == R.id.txt_Text1) {
                         text2.setText("YAY");
                     }
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
-                    final View fv2 = (View) event.getLocalState();
 
-                    if (fv2.getId() == R.id.txt_Text1) {
-                        text2.setText("YAY");
-                    }
                     break;
                 case DragEvent.ACTION_DROP:
-                    final View fv3 = (View) event.getLocalState();
+                    final View dropv = (View) event.getLocalState();
+                    if (dropv.getId() != enterv.getId()) {
 
-                    if (fv3.getId() == R.id.txt_Text1) {
-                        text2.setText("YAY");
                     }
+
                     break;
             }
             return false;
