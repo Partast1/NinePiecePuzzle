@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,32 +45,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HeaderTV">
 
-            <TextView
-                android:id="@+id/txt_Text1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="186dp"
-                android:layout_marginEnd="50dp"
-                android:background="#7FD5DD"
-                android:text="Test"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txt_Text2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="232dp"
-                android:layout_marginEnd="50dp"
-                android:background="#FF9898"
-                android:text="Test"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnWidth="33pt"
+                android:numColumns="3"
+                tools:layout_editor_absoluteX="159dp"
+                tools:layout_editor_absoluteY="204dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -84,6 +66,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
+            <TextView
+                android:id="@+id/txt_Text1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#7FD5DD"
+                android:text="Test"
+                tools:layout_editor_absoluteX="55dp"
+                tools:layout_editor_absoluteY="22dp" />
+
+            <TextView
+                android:id="@+id/txt_Text2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FF9898"
+                android:text="Test"
+                tools:layout_editor_absoluteX="55dp"
+                tools:layout_editor_absoluteY="68dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

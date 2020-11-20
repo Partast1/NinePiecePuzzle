@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity implements PuzzlePresenter.V
 
 
         text1.setOnLongClickListener(longClickListener);
-        //text2.setOnLongClickListener(longClickListener);
+        text2.setOnLongClickListener(longClickListener);
 
-        //text1.setOnDragListener(dragListener);
+        text1.setOnDragListener(dragListener);
         text2.setOnDragListener(dragListener);
 
     }
@@ -54,8 +54,18 @@ public class MainActivity extends AppCompatActivity implements PuzzlePresenter.V
                     }
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
+                    final View fv2 = (View) event.getLocalState();
+
+                    if (fv2.getId() == R.id.txt_Text1) {
+                        text2.setText("YAY");
+                    }
                     break;
                 case DragEvent.ACTION_DROP:
+                    final View fv3 = (View) event.getLocalState();
+
+                    if (fv3.getId() == R.id.txt_Text1) {
+                        text2.setText("YAY");
+                    }
                     break;
             }
             return false;
