@@ -11,7 +11,7 @@ public class PuzzleHandler {
         PieceFactory pieceFactory = new PieceFactory();
         int pieceValue = 1;
         for (int i = 0; i < piecesNum;i++){
-            PuzzlePiece piece = pieceFactory.createPiece((String.valueOf(pieceValue));
+            PuzzlePiece piece = pieceFactory.createPiece(String.valueOf(pieceValue));
             pieceValue++;
             pieces.add(piece);
         }
