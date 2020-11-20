@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements PuzzlePresenter.V
         text2.setOnDragListener(dragListener);
 
     }
-
+    //Comment
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
