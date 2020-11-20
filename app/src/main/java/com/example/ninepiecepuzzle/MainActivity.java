@@ -9,7 +9,8 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PuzzlePresenter.View {
+
     TextView text1, text2;
 
     @Override
